@@ -21,15 +21,15 @@ import Blower_C3 from "../assets/Blower Images/Blower-C/Blower-C4.jpg";
 /* ================= HEAT GUN IMAGES================= */
 // ======== Heat Gun-A ===============================
 import HeatGun_A_Main from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A1.jpg";
-import HeatGun_A1 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A2.jpg";
+// import HeatGun_A1 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A2.jpg";
 import HeatGun_A2 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A3.jpg";
 import HeatGun_A3 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A4.jpg";
 import HeatGun_A4 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A5.jpg";
-import HeatGun_A5 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A6.jpg";
-import HeatGun_A6 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A7.jpg";
+// import HeatGun_A5 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A6.jpg";
+// import HeatGun_A6 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A7.jpg";
 import HeatGun_A7 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A8.jpg";
-import HeatGun_A8 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A9.jpg";
-import HeatGun_A9 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A10.jpg";
+// import HeatGun_A8 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A9.jpg";
+// import HeatGun_A9 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A10.jpg";
 import HeatGun_A10 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A11.jpg";
 import HeatGun_A11 from "../assets/Heat Gun Images/Heat Gun-A/HeatGun-A12.jpg";
 
@@ -340,15 +340,15 @@ export const PRODUCTS = [
       main: HeatGun_A_Main,
       gallery: [
         HeatGun_A_Main,
-        HeatGun_A1,
+        // HeatGun_A1,
         HeatGun_A2,
         HeatGun_A3,
         HeatGun_A4,
-        HeatGun_A5,
-        HeatGun_A6,
+        // HeatGun_A5,
+        // HeatGun_A6,
         HeatGun_A7,
-        HeatGun_A8,
-        HeatGun_A9,
+        // HeatGun_A8,
+        // HeatGun_A9,
         HeatGun_A10,
         HeatGun_A11,
       ],

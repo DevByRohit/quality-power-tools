@@ -12,7 +12,6 @@
 
 /* SHRINK STATE */
 .navbar--shrink {
-  /* background-color: rgba(0, 168, 132, 0.9); */
   background: linear-gradient(90deg, #cbebde 0%, #d6fae8 65%, #ffffff 100%);
   backdrop-filter: blur(6px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
@@ -68,9 +67,6 @@
   width: 240px;
   padding: 6px;
   border-radius: 8px;
-  /* background: rgba(255, 255, 255, 0.85); */
-  /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18); */
-  /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); */
   border: none;
   z-index: 1;
   overflow: hidden;
@@ -78,15 +74,13 @@
   transition: all 0.3s ease;
 }
 
-.nav-logo:hover {
+/* .nav-logo:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-}
+} */
 
 .navbar--shrink .nav-logo {
   width: 220px;
-  /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); */
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
 }
 
 /* DESKTOP MENU */
@@ -100,7 +94,6 @@
 .nav-links li {
   position: relative;
   font-size: 20px;
-  /* color: #fff; */
   cursor: pointer;
 }
 
