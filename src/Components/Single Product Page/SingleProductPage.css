@@ -1,0 +1,389 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ============================================
+  PAGE WRAPPER
+============================================ */
+.single-product-page {
+  background-color: #ffffff;
+}
+
+/* ============================================
+   HERO (SCOPED FOR SINGLE PRODUCT PAGE)
+============================================ */
+.sp-hero-header {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sp-hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  /* border: 5px solid rgb(255, 0, 0); */
+}
+
+.sp-hero-content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #5a5a5a;
+  /* border: 2px solid rgb(255, 0, 0); */
+}
+
+.sp-hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  /* margin-bottom: 10px; */
+  text-transform: uppercase;
+}
+
+.sp-highlight {
+  color: #00a16c;
+}
+
+.sp-hero-divider {
+  width: 40%;
+  height: 3px;
+  margin: 15px auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.sp-hero-subtitle {
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+  margin: 15px auto;
+  font-weight: 700;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
+.sp-hero-button {
+  background-color: transparent;
+  color: #2e7d5b;
+  border: 2px solid #2e7d5b;
+  padding: 10px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.sp-hero-button:hover {
+  background-color: #2e7d5b;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.product-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* border: 2px solid rebeccapurple; */
+}
+
+/* ============================================
+   CATEGORY TITLE + DESCRIPTION
+============================================ */
+.category-tittle {
+  width: 100%;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: linear-gradient(90deg, #eaf5f0 0%, #ffffff 100%);
+}
+
+/* TITLE */
+.category-tittle .single-product-title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #0b3b2d, #00da86);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+/* DESCRIPTION */
+.category-tittle .single-product-description {
+  font-size: 1rem;
+  text-align: justify;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* ============================================
+  PRODUCT GRID
+============================================ */
+.single-product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 30px;
+  padding: 30px 20px;
+}
+
+/* ============================================
+   PRODUCT CARD
+============================================ */
+.single-product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(20, 20, 40, 0.4);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.single-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(20, 20, 40, 0.45);
+}
+
+.card-meta-data {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  justify-content: space-between;
+  border-top: 2px solid rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to right, #00da8648, #ffeeee);
+  /* border: 2px solid black; */
+}
+
+.single-product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ============================================
+   CARD CONTENT
+============================================ */
+.single-product-card h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.single-product-card p {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* ============================================
+  CARD BUTTONS
+============================================ */
+
+.single-page-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Base Button Style */
+.spcard-cta-action {
+  /* width: 100px; */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex: 1;
+}
+
+/* Secondary (Quick View) */
+.spcard-cta-action.secondary {
+  padding: 7.5px 14px;
+  background-color: rgba(0, 218, 134, 0.15);
+  border: 1px solid rgba(3, 121, 78, 0.45);
+  color: #03794e;
+}
+
+.spcard-cta-action.secondary:hover {
+  background-color: rgba(0, 218, 134, 0.3);
+  transform: scale(1.02);
+}
+
+/* Primary (See More) */
+.spcard-cta-action.primary {
+  padding: 10px 14px;
+  background-color: #03794e;
+  color: #ffffff;
+  border: 1px solid #03794e;
+}
+
+.spcard-cta-action.primary:hover {
+  background-color: #029c63;
+  transform: scale(1.02);
+}
+
+/* ============================================
+  RESPONSIVE IMPROVEMENTS
+============================================ */
+
+/* ---------- Large Screens (MacBook / 1440px+) ---------- */
+@media (min-width: 1440px) {
+  .sp-hero-title {
+    font-size: 4rem;
+  }
+
+  .sp-hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .category-tittle .single-product-description {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* ---------- Laptop & Tablet ---------- */
+@media (max-width: 1024px) {
+  .sp-hero-header {
+    height: 70vh;
+  }
+
+  .sp-hero-title {
+    font-size: 2.8rem;
+  }
+
+  .sp-hero-subtitle {
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .product-heading {
+    font-size: 1.2rem;
+    top: 92%;
+  }
+
+  .category-tittle .single-product-title {
+    font-size: 28px;
+  }
+
+  .category-tittle .single-product-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---------- Tablet (768px and below) ---------- */
+@media (max-width: 768px) {
+  .sp-hero-header {
+    height: 55vh;
+  }
+
+  .sp-hero-content {
+    padding: 0 20px;
+  }
+
+  .sp-hero-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .sp-hero-divider {
+    width: 80%;
+  }
+
+  .sp-hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .sp-hero-button {
+    padding: 8px 22px;
+    font-size: 0.85rem;
+  }
+
+  .product-heading {
+    font-size: 1rem;
+    top: 95%;
+  }
+
+  .category-tittle {
+    padding: 30px 20px;
+  }
+
+  .category-tittle .single-product-title {
+    font-size: 22px;
+  }
+
+  .category-tittle .single-product-description {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .single-product-list {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+/* ---------- Mobile (480px and below) ---------- */
+@media (max-width: 480px) {
+  .sp-hero-header {
+    height: 60vh;
+  }
+
+  .sp-hero-title {
+    font-size: 1.6rem;
+  }
+
+  .sp-hero-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .category-tittle .single-product-title {
+    font-size: 25px;
+  }
+
+  .category-tittle .single-product-description {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .single-product-list {
+    grid-template-columns: 1fr;
+  }
+
+  .single-page-btn-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .spcard-cta-action {
+    font-size: 16px;
+    width: 100%;
+  }
+}

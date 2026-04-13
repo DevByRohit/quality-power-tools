@@ -1,0 +1,198 @@
+/* ===============================
+   Q CAROUSEL – UI IMPROVED
+   =============================== */
+
+.q-carousel {
+  /* width: min(1200px, 92vw); */
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-sizing: border-box;
+  border-radius: 18px;
+  /* overflow: hidden; */
+
+  /* premium feel */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  border: 2px solid black;
+}
+
+/* hide debug index */
+.q-carousel__debug {
+  position: absolute;
+  left: -9999px;
+}
+
+/* ===============================
+   VIEWPORT
+   =============================== */
+
+.q-carousel__viewport {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+/* ===============================
+   SLIDES
+   =============================== */
+
+.q-carousel__slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateX(40px);
+  z-index: 1;
+
+  transition: opacity 700ms ease, transform 700ms ease;
+  will-change: opacity, transform;
+}
+
+/* Active slide */
+.q-carousel__slide[data-active="true"] {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 3;
+}
+
+/* Inactive slide */
+.q-carousel__slide[data-active="false"] {
+  opacity: 0;
+  transform: translateX(-40px);
+  z-index: 2;
+}
+
+/* Images inside slides */
+.q-carousel__slide img,
+.q-carousel__slide > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* display: block; */
+  border-radius: 14px;
+}
+
+/* ===============================
+   CONTROLS
+   =============================== */
+
+.q-carousel__controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.q-carousel__btn {
+  pointer-events: auto;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+
+  transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.q-carousel__btn:hover {
+  background: rgba(0, 0, 0, 0.75);
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
+   STEPPER
+   =============================== */
+
+.q-carousel__stepper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+/* step buttons */
+.q-carousel__step {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+
+  color: #fff;
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+  transition: all 200ms ease;
+}
+
+.q-carousel__step:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* active step */
+.q-carousel__step.is-active {
+  background: linear-gradient(135deg, #00c896, #14ff72);
+  color: #003b2d;
+  font-weight: 800;
+  border-color: transparent;
+  transform: scale(1.08);
+}
+
+/* number */
+.q-carousel__step-label {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 900px) {
+  .q-carousel {
+    width: 100vw;
+    height: 50vh;
+    border-radius: 0;
+  }
+
+  .q-carousel__btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .q-carousel__step {
+    width: 28px;
+    height: 28px;
+  }
+}

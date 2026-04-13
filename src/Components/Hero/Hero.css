@@ -1,0 +1,123 @@
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(rgba(62, 166, 141, 0.5), rgba(8, 0, 58, 0.5)),
+    url("../../assets/banners-hero-img.webp");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  text-align: center;
+  max-width: 800px;
+  /* border: 2px solid black; */
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 1.5px;
+}
+
+.hero-text p {
+  max-width: 800px;
+  margin: 15px 10px;
+  line-height: 1.5;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 15px;
+  /* border: 2px solid rgb(0, 17, 255); */
+}
+
+/* =========================================================
+   MAIN BUTTON STYLE (btn-14 applied to BOTH buttons)
+========================================================= */
+.btn-14 {
+  position: relative;
+  background: rgba(0, 168, 132, 0.8);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.7);
+  border: none;
+  z-index: 100;
+}
+
+.btn-14:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 6px;
+  background-image: linear-gradient(315deg, #ccffd9 0%, #87f0b5 74%);
+  transition: all 0.32s ease;
+}
+
+.btn-14:hover {
+  color: #003d2c;
+  font-weight: 600;
+}
+
+.btn-14:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+
+/* =========================================================
+  CONTACT ICON ANIMATION (same as before)
+========================================================= */
+.btn-icon--contact {
+  transition: transform 260ms cubic-bezier(0.2, 0.9, 0.28, 1);
+}
+
+.btn-contact:hover .btn-icon--contact {
+  transform: translateX(-8px) rotate(-6deg) scale(0.98);
+}
+
+/* =========================================================
+   EXPLORE ARROW — forward → disappear → enter from left
+   ========================================================= */
+
+@keyframes arrow-cycle {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(160%) rotate(8deg);
+    opacity: 0;
+  }
+  41% {
+    transform: translateX(-160%) rotate(-8deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.btn-icon--arrow {
+  transition: transform 160ms ease, opacity 160ms ease;
+  will-change: transform, opacity;
+}
+
+.btn-explore:hover .btn-icon--arrow {
+  animation: arrow-cycle 700ms cubic-bezier(0.2, 0.9, 0.28, 1) 1 both;
+}
+
+/* =========================================================
+   Focus ring / accessibility
+   ========================================================= */
+.btn:focus {
+  box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.1);
+  outline: none;
+}

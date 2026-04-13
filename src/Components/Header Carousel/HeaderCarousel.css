@@ -1,0 +1,414 @@
+/* ===============================
+   HERO CAROUSEL WRAPPER
+   =============================== */
+
+.hero-carousel {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* react-multi-carousel internal height fix */
+.hero-carousel__container,
+.react-multi-carousel-list,
+.react-multi-carousel-track,
+.hero-carousel__item {
+  height: 100%;
+}
+
+/* ===============================
+   HERO SLIDE
+   =============================== */
+
+.hero-slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  /* filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15)); */
+  /* border: 5px solid green; */
+}
+
+/* dark overlay for readability */
+.hero-slide__overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* background-image: linear-gradient(
+    to right,
+    rgba(3, 121, 78, 0.6) 0%,
+    rgba(0, 218, 134, 0.22) 40%,
+    rgba(0, 0, 0, 0) 70%
+  ); */
+  /* border: 2px solid red; */
+}
+
+/* ===============================
+   CONTENT LAYOUT
+  =============================== */
+.hero-slide__content {
+  padding-left: 8%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  /* border: 2px solid rgb(183, 0, 255); */
+}
+
+/* ===============================
+   STAGGERED ANIMATION BASE STATE
+   =============================== */
+
+.hero-slide__title,
+.hero-slide__name,
+.hero-slide__desc,
+.hero-slide__buttons {
+  opacity: 0;
+  transform: translateY(100px);
+  filter: blur(20px);
+}
+
+/* ===============================
+   STAGGERED ANIMATION (ACTIVE SLIDE)
+   =============================== */
+
+.react-multi-carousel-item--active .hero-slide__title {
+  animation: fadeInUp 1s ease-in-out 0.3s forwards;
+}
+
+.react-multi-carousel-item--active .hero-slide__name {
+  animation: fadeInUp 1s ease-in-out 0.6s forwards;
+}
+
+.react-multi-carousel-item--active .hero-slide__desc {
+  animation: fadeInUp 1s ease-in-out 0.9s forwards;
+}
+
+.react-multi-carousel-item--active .hero-slide__buttons {
+  animation: fadeInUp 1s ease-in-out 1.2s forwards;
+}
+
+.hero-slide__title {
+  font-size: 46px;
+  word-spacing: 4px;
+  font-weight: bolder;
+  color: #0b3b2d;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.hero-slide__name {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: #202020;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.20);
+}
+
+.hero-slide__desc {
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 540px;
+  margin-bottom: 28px;
+  text-align: left;
+  color: #1f2933;
+
+  /* Subtle backdrop for image overlap */
+  /* background: rgba(255, 255, 255, 0.55); */
+  /* backdrop-filter: blur(2px); */
+
+  /* padding: 0px 8px; */
+  /* border-radius: 8px; */
+
+  /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); */
+  /* border: 2px solid yellow; */
+}
+
+/* ===============================
+  BUTTON CONTAINER
+=============================== */
+
+.hero-slide__buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  /* border: 2px solid green; */
+}
+
+/* =========================================================
+  MAIN BUTTON STYLE (btn-14 for BOTH buttons)
+========================================================= */
+
+.btn-14 {
+  padding: 8px 14px;
+  position: relative;
+  background: rgba(0, 168, 132, 0.8);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-14::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 6px;
+  background-image: linear-gradient(315deg, #ccffd9 0%, #87f0b5 74%);
+  transition: all 0.32s ease;
+}
+
+.btn-14:hover {
+  color: #003d2c;
+  font-weight: 600;
+}
+
+.btn-14:hover::after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+
+/* =========================================================
+   ICON BASE
+   ========================================================= */
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 2px solid black; */
+}
+
+/* =========================================================
+    DOWNLOAD ICON ANIMATION
+  ========================================================= */
+
+.btn-icon--download {
+  transition: transform 360ms cubic-bezier(0.2, 0.9, 0.28, 1);
+}
+
+.btn-catalog:hover .btn-icon--download {
+  transform: translateX(5px) rotate(0deg) scale(0.98);
+}
+
+/* =========================================================
+   EXPLORE ARROW ANIMATION
+   forward → disappear → enter from left
+  ========================================================= */
+
+@keyframes arrow-cycle {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  40% {
+    transform: translateX(160%) rotate(8deg);
+    opacity: 0;
+  }
+  41% {
+    transform: translateX(-160%) rotate(-8deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.btn-icon--arrow {
+  transition: transform 650ms ease, opacity 160ms ease;
+  will-change: transform, opacity;
+}
+
+.btn-view-more:hover .btn-icon--arrow {
+  animation: arrow-cycle 900ms cubic-bezier(0.2, 0.9, 0.28, 1) 1 both;
+}
+
+/* =========================================================
+   ACCESSIBILITY / FOCUS
+   ========================================================= */
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.2);
+}
+
+/* ===============================
+   DOTS (ON IMAGE)
+   =============================== */
+
+.hero-carousel .react-multi-carousel-dot-list {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 20;
+}
+
+.hero-carousel .react-multi-carousel-dot button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(161, 161, 161, 0.6);
+  border: none;
+  margin: 0 6px;
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.hero-carousel .react-multi-carousel-dot--active button {
+  background: #00da86;
+  transform: scale(1.3);
+}
+
+.react-multi-carousel-dot--active button {
+  background: #00da86;
+  transform: scale(1.3);
+}
+
+/* ===============================
+   ARROWS
+   =============================== */
+
+.react-multiple-carousel__arrow {
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  min-width: 46px;
+  min-height: 46px;
+  border-radius: 50%;
+  transition: all 200ms ease;
+  z-index: 25;
+}
+
+.react-multiple-carousel__arrow:hover {
+  background: rgba(0, 0, 0, 0.75);
+  transform: scale(1.08);
+}
+
+.react-multiple-carousel__arrow::before {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* ===============================
+    ANIMATION
+  =============================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+    filter: blur(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+  =============================== */
+
+@media (max-width: 768px) {
+  .hero-carousel {
+    height: 100vh;
+  }
+
+  .hero-slide__desc {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slide__content {
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: 60px;
+    /* border: 4px solid green; */
+  }
+
+  .hero-carousel {
+    height: 75vh;
+  }
+
+  .hero-slide__title {
+    font-size: 30px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    color: #064635;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    /* border: 2px solid black; */
+  }
+
+  .hero-slide__name {
+    font-size: 25px;
+    color: #ffffff;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+    font-weight: bolder;
+    padding: 0;
+    /* border: 2px solid black; */
+  }
+
+  .hero-slide__desc {
+    font-size: 16px;
+    text-align: justify;
+    /* padding: 0px 10px; */
+    color: #1f2933;
+    /* border: 2px solid black; */
+  }
+
+  .hero-slide__buttons {
+    /* border: 2px solid green; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero-slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    background-size: 190%;
+    background-position: 95% center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.15));
+    /* border: 5px solid green; */
+  }
+
+  .hero-slide__overlay {
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(5px);
+  }
+
+  /* hide arrows only for hero */
+  .hero-carousel .react-multiple-carousel__arrow {
+    display: none !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-slide__buttons {
+    flex-direction: row;
+    gap: 10px;
+  }
+}

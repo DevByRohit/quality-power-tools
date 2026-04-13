@@ -1,0 +1,278 @@
+/* ================================
+   ROOT
+================================ */
+.qv-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+}
+
+/* ================================
+   BACKDROP
+================================ */
+.qv-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+  /* border: 2px solid black; */
+}
+
+/* ================================
+   WRAPPER
+================================ */
+.qv-wrapper {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  /* border: 2px solid black; */
+}
+
+/* ================================
+   PANEL
+================================ */
+
+.qv-panel {
+  width: 100%;
+  max-width: 1000px;
+  max-height: 100vh;
+  /* padding: 20px; */
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(20, 20, 40, 0.45);
+  position: relative;
+  overflow: hidden;
+  /* border: 5px solid black; */
+}
+
+/* ================================
+   CLOSE ICON
+================================ */
+.qv-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+/* ================================
+   LAYOUT
+================================ */
+
+.qv-content {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+}
+
+/* ================================
+   IMAGE
+================================ */
+
+.qv-image {
+  background: #f7f7f8;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  overflow: hidden;
+  /* border: 2px solid black; */
+}
+
+.qv-image img {
+  width: 100%;
+  max-width: 420px;
+  max-height: 340px; /* ✅ controls image height */
+  object-fit: contain;
+  
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  /* border: 2px solid black; */
+}
+
+/* ================================
+   GALLERY THUMBNAILS
+================================ */
+
+.qv-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* ✅ 4 per row */
+  gap: 10px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 400px;
+  /* border: 2px solid black; */
+}
+
+.qv-thumb {
+  border: 2px solid transparent;
+  padding: 2px;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qv-thumb img {
+  width: 100%;
+  height: 60px;
+  object-fit: contain;
+}
+
+.qv-thumb.active {
+  border-color: #03794e;
+}
+
+.qv-thumb:hover {
+  transform: scale(1.05);
+}
+
+/* ================================
+   INFO
+================================ */
+/* .qv-info {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background-image: linear-gradient(to right, #00da8648, #ffeeee);
+} */
+.qv-info {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  overflow-y: auto; /* ✅ scroll inside */
+  background-image: linear-gradient(to right, #00da8648, #ffeeee);
+}
+
+.qv-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111;
+}
+
+/* ================================
+   SPEC TABLE
+================================ */
+.qv-specs h4 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: #0b3b2d;
+}
+
+.qv-specs table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.qv-specs td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.qv-specs td:first-child {
+  font-weight: 600;
+  color: #333;
+  width: 50%;
+}
+
+/* ================================
+   ACTIONS
+================================ */
+.qv-actions {
+  display: flex;
+  margin-top: auto;
+  gap: 16px;
+  flex-wrap: wrap;
+  /* border: 2px solid black; */
+}
+
+.qv-view-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #03794e 0%, #00da86 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(3, 121, 78, 0.4);
+  transition: all 0.25s ease;
+}
+
+.qv-view-details:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(3, 121, 78, 0.6);
+}
+
+.qv-close-btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  background: transparent;
+  border: 2px solid #03794e;
+  color: #03794e;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.qv-close-btn:hover {
+  background: linear-gradient(135deg, #03794e 0%, #00da86 100%);
+  color: #fff;
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+.qv-fade-enter {
+  transition: opacity 200ms ease-out;
+}
+.qv-fade-from {
+  opacity: 0;
+}
+.qv-fade-to {
+  opacity: 1;
+}
+.qv-fade-leave {
+  transition: opacity 150ms ease-in;
+}
+
+.qv-scale-enter {
+  transition: transform 200ms ease-out, opacity 200ms ease-out;
+}
+.qv-scale-from {
+  transform: scale(0.95);
+  opacity: 0;
+}
+.qv-scale-to {
+  transform: scale(1);
+  opacity: 1;
+}
+.qv-scale-leave {
+  transition: transform 150ms ease-in, opacity 150ms ease-in;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+  .qv-content {
+    grid-template-columns: 1fr;
+  }
+
+  .qv-image img {
+    max-height: 260px;
+  }
+}

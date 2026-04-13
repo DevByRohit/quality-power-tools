@@ -1,0 +1,210 @@
+/* theme colors */
+:root {
+  --text-dark: #04221a;
+  --shadow: rgba(0, 0, 0, 0.16);
+  --gap: 22px;
+}
+
+/* Section */
+.stats-section {
+  background: linear-gradient(90deg, #dcfaee 0%, #d6fae8 45%, #ffffff 100%);
+  padding: 30px 0px;
+  display: flex;
+  justify-content: center;
+  /* border: 2px solid black; */
+}
+
+.stats-container {
+  width: 100%;
+  max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  align-items: stretch;
+  /* border: 2px solid black; */
+}
+
+/* Card base */
+.stat-card {
+  background: linear-gradient(90deg, #dcfaee 0%, #dffced 45%, #ffffff 100%);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 12px 28px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+  min-height: 200px;
+  text-align: center;
+  cursor: pointer;
+  /* border: 2px solid black; */
+}
+
+/* replicate hover from your old .elem */
+.stat-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+}
+
+/* top image area */
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  margin-bottom: 14px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+  box-shadow: 0 12px 28px var(--shadow);
+  color: #11cea5;
+  /* box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06) inset; */
+  /* border: 2px solid rgb(255, 102, 0); */
+}
+
+.stat-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* number + plus */
+.digit-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  /* border: 2px solid rebeccapurple; */
+}
+
+.icon-plus {
+  color: var(--text-dark);
+  font-size: 18px;
+  transform: translateY(-2px);
+}
+
+/* number styling handled by Counter inline styles, but ensure fallback here */
+.digit-plus .counter-number,
+.digit-plus span {
+  font-weight: 800;
+  color: var(--text-dark);
+  font-size: 36px;
+}
+
+/* title */
+.stat-title {
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text-dark);
+  /* padding: 6px 8px; */
+  /* border: 2px solid green; */
+}
+
+/* smaller cards on hover background change (optional subtle) */
+.stat-card:active {
+  transform: translateY(-4px);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* large desktop -> 3 columns */
+@media (max-width: 1199px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 25px;
+    /* border: 2px solid black; */
+  }
+}
+
+/* medium -> 2 columns */
+@media (max-width: 899px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    /* border: 2px solid black; */
+  }
+  .stat-card {
+    min-height: 160px;
+    /* padding: 18px; */
+    /* margin: 0px 20px; */
+    /* border: 2px solid black; */
+  }
+  .digit-plus .counter-number,
+  .digit-plus span {
+    font-size: 34px;
+  }
+  .stat-top {
+    width: 78px;
+    height: 78px;
+  }
+  .stat-img {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+/* mobile -> stacked single column, change layout to horizontal row for compactness */
+@media (max-width: 639px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 16px;
+    padding: 14px;
+    min-height: 88px;
+  }
+
+  .stat-top {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .stat-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .digit-plus {
+    gap: 6px;
+  }
+
+  .digit-plus .counter-number,
+  .digit-plus span {
+    font-size: 28px;
+  }
+
+  .stat-title {
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
+
+/* tiny phones */
+@media (max-width: 420px) {
+  .stat-top {
+    width: 54px;
+    height: 54px;
+  }
+  .stat-img {
+    width: 34px;
+    height: 34px;
+  }
+  .digit-plus .counter-number,
+  .digit-plus span {
+    font-size: 24px;
+  }
+  .stat-card {
+    gap: 10px;
+    padding: 10px;
+  }
+}

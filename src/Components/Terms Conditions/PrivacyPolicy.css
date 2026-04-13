@@ -1,0 +1,93 @@
+/* ================= PAGE BASE ================= */
+
+.privacy-page {
+  background: #f4f7f6;
+}
+
+/* ================= HERO SECTION ================= */
+
+.privacy-header {
+  margin-top: 100px;
+  background: #f4f7f6;
+  text-align: center;
+}
+
+.privacy-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.privacy-header p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* ================= CONTENT SECTION ================= */
+
+.privacy-content {
+  padding: 60px 0px;
+}
+
+.privacy-container {
+  max-width: 1000px;
+  margin: auto;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+}
+
+/* ================= HEADINGS ================= */
+
+.privacy-container h3 {
+  font-size: 20px;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  color: #03794e;
+  position: relative;
+  padding-left: 18px;
+}
+
+.privacy-container h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 6px;
+  height: 22px;
+  background: #03794e;
+  border-radius: 1px;
+}
+
+/* ================= PARAGRAPH ================= */
+
+.privacy-container p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 14px;
+}
+
+/* ================= LIST ================= */
+
+.privacy-container ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.privacy-container li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .privacy-container {
+    padding: 30px 20px;
+  }
+}

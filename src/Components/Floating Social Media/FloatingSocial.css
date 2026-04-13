@@ -1,0 +1,133 @@
+.floating-social {
+  position: fixed;
+  bottom: 50px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+  padding-top: 10px;
+}
+
+/* MAIN BUTTON */
+.main-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: none;
+  background: #1b5e20;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+.main-social-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ICON CONTAINER */
+.social-icons {
+  position: absolute;
+  bottom: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+/* SHOW WHEN OPEN */
+.floating-social.open .social-icons {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* EACH ICON */
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  color: #1b5e20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+
+  opacity: 0;
+  transform: translateY(15px);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    0.3s;
+}
+
+.floating-social.open .social-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-icon:hover {
+  background: #35864d;
+  color: white;
+  transform: translateX(-5px);
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: absolute;
+  right: 60px;
+  background: #1b5e20;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: 0.3s;
+}
+
+.social-icon:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.floating-social.open .social-icon:nth-child(1) {
+  transition-delay: 0.3s;
+}
+
+.floating-social.open .social-icon:nth-child(2) {
+  transition-delay: 0.25s;
+}
+
+.floating-social.open .social-icon:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.floating-social.open .social-icon:nth-child(4) {
+  transition-delay: 0.15s;
+}
+
+.floating-social.open .social-icon:nth-child(5) {
+  transition-delay: 0.1s;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .social-icon:hover {
+    transform: none;
+  }
+}

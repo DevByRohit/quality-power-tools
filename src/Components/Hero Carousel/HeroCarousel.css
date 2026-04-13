@@ -1,0 +1,327 @@
+/* =======================
+   BASE STRUCTURE
+======================= */
+.carousel {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Each small slide box */
+.carousel .list .item {
+  width: 180px;
+  height: 250px;
+  position: absolute;
+  top: 85%;
+  transform: translateY(-70%);
+  left: 70%;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  transition: 1s;
+  /* border: 5px solid greenyellow; */
+}
+
+/* Big current & next slides */
+.carousel .list .item:nth-child(1),
+.carousel .list .item:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: translate(0, 0);
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Next slides (small ones on right) */
+.carousel .list .item:nth-child(3) {
+  left: 67%;
+}
+.carousel .list .item:nth-child(4) {
+  left: calc(67% + 200px);
+}
+.carousel .list .item:nth-child(5) {
+  left: calc(67% + 400px);
+}
+.carousel .list .item:nth-child(6) {
+  left: calc(67% + 600px);
+}
+.carousel .list .item:nth-child(n + 7) {
+  left: calc(67% + 800px);
+  opacity: 0;
+}
+
+/* =======================
+  CONTENT INSIDE BIG SLIDE
+======================= */
+.list .item .content {
+  position: absolute;
+  top: 53%;
+  left: 70px;
+  transform: translateY(-50%);
+  width: 45%;
+  height: auto;
+  color: #fff;
+  display: none;
+  /* border: 2px solid greenyellow; */
+}
+
+.list .item:nth-child(2) .content {
+  display: block;
+}
+
+.content .title {
+  font-size: 100px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #00a884;
+  line-height: 1;
+  letter-spacing: 5px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0.3s forwards;
+}
+
+.content .name {
+  font-size: 100px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 5px;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0.6s forwards;
+}
+
+.content .des {
+  font-size: 18px;
+  margin: 15px 0;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0.9s forwards;
+  text-align: justify;
+  /* border: 2px solid red; */
+}
+
+.content .btn {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 1.2s forwards;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+    filter: blur(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* =======================
+       ARROWS
+======================= */
+.arrows {
+  position: absolute;
+  top: 85%;
+  right: 46%;
+  display: flex;
+  gap: 10px;
+  z-index: 200;
+}
+
+.arrows button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #00a884;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bolder;
+  transition: 0.4s;
+}
+
+.arrows button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* =======================
+    TIME BAR
+======================= */
+.timeRunning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: #00ff66cb;
+  width: 0%;
+  animation: runningTime 7s linear forwards;
+}
+
+@keyframes runningTime {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ============================================
+    RESPONSIVE — TABLETS & SMALL LAPTOPS
+============================================ */
+@media (max-width: 1024px) {
+  .content .title,
+  .content .name {
+    font-size: 70px;
+  }
+
+  .list .item .content {
+    width: 55%;
+    left: 40px;
+  }
+
+  .carousel .list .item {
+    width: 150px;
+    height: 210px;
+  }
+
+  .arrows {
+    right: 42%;
+    top: 88%;
+  }
+}
+
+/* ============================================
+    RESPONSIVE — MOBILE LARGE (768px)
+============================================ */
+@media (max-width: 768px) {
+  /* .content .title,
+  .content .name {
+    font-size: 48px;
+  }
+
+  .list .item .content {
+    width: 70%;
+    left: 20px;
+  }
+
+  .content .des {
+    font-size: 16px;
+  }
+
+  .carousel .list .item {
+    width: 120px;
+    height: 170px;
+    top: 82%;
+  } */
+  /* Enable GPU acceleration */
+  .carousel .list .item,
+  .content,
+  .content .title,
+  .content .name,
+  .content .des,
+  .content .btn {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+  }
+
+  /* Reduce heavy blur on mobile for smoother animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(60px); /* was 100px */
+      filter: blur(8px); /* was 20px → heavy */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .arrows {
+    top: 75%; /* was 90%, move higher */
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .arrows button {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+  }
+}
+
+/*============================================
+  RESPONSIVE — MOBILE SMALL (480px)
+============================================ */
+@media (max-width: 480px) {
+  .carousel {
+    width: 100%;
+    height: 92vh;
+  }
+  .content .title,
+  .content .name {
+    font-size: 5px;
+    line-height: 1.2;
+    /* border: 2px solid rgb(0, 38, 255); */
+  }
+
+  .list .item .content {
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    transform: translate(1.5%, -50%); /* centers both directions */
+    /* width: 100%; */
+    color: #fff;
+    text-align: center; /* makes text nicely centered */
+    display: none;
+  }
+
+  .carousel .list .item {
+    width: 100px;
+    height: 140px;
+    top: 80%;
+    border-radius: 10px;
+    /* border: 2px solid rgb(112, 0, 116); */
+  }
+
+  .arrows {
+    top: 80%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .arrows button {
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+  }
+}
+
+/* ============================================
+    SMALLER MOBILE (<=380px)
+============================================ */
+@media (max-width: 380px) {
+  .content .title,
+  .content .name {
+    font-size: 36px;
+  }
+
+  .list .item .content {
+    width: 90%;
+    left: 12px;
+  }
+
+  .carousel .list .item {
+    width: 90px;
+    height: 120px;
+  }
+}
