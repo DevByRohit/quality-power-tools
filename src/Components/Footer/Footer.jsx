@@ -10,9 +10,11 @@ const Footer = () => {
     { label: "Blower", path: "/product/blower" },
     { label: "Heat Gun", path: "/product/heat-gun" },
     { label: "Paint Mixer", path: "/product/paint-mixer" },
-    // { label: "Armature", path: "/product/armature" },
-    // { label: "Field Coil", path: "/product/field-coil" },
-    // { label: "Spare Parts", path: "/product/spare-parts" },
+    {
+      label: "Qualitex Dashboard",
+      path: "https://dashboard.qualitexpowertool.com",
+      external: true,
+    },
   ];
 
   return (
@@ -75,7 +77,14 @@ const Footer = () => {
             {usefulLinks.map((item) => (
               <li key={item.path}>
                 <RiLinksFill className="bullet" />
-                <Link to={item.path}>{item.label}</Link>
+
+                {item.external ? (
+                  <a href={item.path} target="_blank" rel="noopener noreferrer">
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link to={item.path}>{item.label}</Link>
+                )}
               </li>
             ))}
           </ul>
@@ -96,16 +105,6 @@ const Footer = () => {
               <RiLinksFill className="bullet" />
               <Link to="/terms-conditions">Terms & Conditions</Link>
             </li>
-
-            {/* <li>
-              <RiLinksFill className="bullet" />
-              <Link to="/shipping-policy">Shipping Policy</Link>
-            </li>
-
-            <li>
-              <RiLinksFill className="bullet" />
-              <Link to="/refund-cancellation">Refund & Cancellation</Link>
-            </li> */}
           </ul>
         </div>
 
@@ -137,16 +136,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
-      {/* Floating WhatsApp button */}
-      {/* <a
-        href="https://wa.me/919266685321"
-        aria-label="WhatsApp Chat"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img src={whatsapp} alt="whatsapp-Icon" className="whatsapp-fab" />
-      </a> */}
     </footer>
   );
 };

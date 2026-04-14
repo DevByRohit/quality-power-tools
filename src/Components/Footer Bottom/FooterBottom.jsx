@@ -1,4 +1,3 @@
-import React from "react";
 import "./FooterBottom.css";
 import { RiCopyrightLine } from "react-icons/ri";
 
@@ -9,7 +8,7 @@ const FooterBottom = () => {
         <div className="footer-copyright">
           Qualitex Power Tools&nbsp;
           <RiCopyrightLine /> &nbsp;
-          {new Date().getFullYear()}. &nbsp;All rights reserved.
+          {new Date().getFullYear()}. &nbsp;All rights reserved
         </div>
 
         <span className="footer-separator">&nbsp;|&nbsp;</span>
