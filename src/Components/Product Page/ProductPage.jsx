@@ -93,6 +93,36 @@ const ProductsPage = () => {
           viewMoreTo="/product/paint-mixer"
         />
       </section>
+
+      {/* ================= Angle Grinder ================= */}
+      <section className="products-section">
+        <ReusableCarousel
+          items={PRODUCTS_BY_CATEGORY["angle-grinder"]}
+          heading="Angle Grinder"
+          category="angle-grinder"
+          viewMoreTo="/product/angle-grinder"
+        />
+      </section>
+
+      {/* ================= Drill Machine ================= */}
+      <section className="products-section">
+        <ReusableCarousel
+          items={PRODUCTS_BY_CATEGORY["drill-machine"]}
+          heading="Drill Machine"
+          category="drill-machine"
+          viewMoreTo="/product/drill-machine"
+        />
+      </section>
+
+      {/* ================= Marble Cutter ================= */}
+      <section className="products-section">
+        <ReusableCarousel
+          items={PRODUCTS_BY_CATEGORY["marble-cutter"]}
+          heading="Marble Cutter"
+          category="marble-cutter"
+          viewMoreTo="/product/marble-cutter"
+        />
+      </section>
     </main>
   );
 };

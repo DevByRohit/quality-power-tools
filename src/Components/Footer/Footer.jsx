@@ -10,11 +10,9 @@ const Footer = () => {
     { label: "Blower", path: "/product/blower" },
     { label: "Heat Gun", path: "/product/heat-gun" },
     { label: "Paint Mixer", path: "/product/paint-mixer" },
-    {
-      label: "Qualitex Dashboard",
-      path: "https://dashboard.qualitexpowertool.com",
-      external: true,
-    },
+    { label: "Angle Grinder", path: "/product/angle-grinder" },
+    { label: "Drill Machine", path: "/product/drill-machine" },
+    { label: "Marble Cutter", path: "/product/marble-cutter" },
   ];
 
   return (
@@ -105,16 +103,28 @@ const Footer = () => {
               <RiLinksFill className="bullet" />
               <Link to="/terms-conditions">Terms & Conditions</Link>
             </li>
+
+            <li>
+              <RiLinksFill className="bullet" />
+              <Link to="https://dashboard.qualitexpowertool.com">
+                Qualitex Dashboard
+              </Link>
+            </li>
+
+            {/*{
+              label: "Qualitex Dashboard",
+              path: "https://dashboard.qualitexpowertool.com",
+              external: true,}, 
+            */}
           </ul>
         </div>
 
         {/* Column 4 - Brochure / QR */}
-        <div className="footer-col brochure-col">
+        {/* <div className="footer-col brochure-col">
           <h3 className="footer-title scan">Scan For E - Catalogue</h3>
           <div className="divider" />
 
           <div className="qr-wrap">
-            {/* Replace src with your actual QR image */}
             <a
               href="/qualitex-catalogue.pdf"
               target="_blank"
@@ -134,7 +144,7 @@ const Footer = () => {
               Download E - Catalogue
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

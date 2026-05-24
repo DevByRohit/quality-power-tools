@@ -46,6 +46,21 @@ import PaintMixer_A1 from "../assets/Paint Mixer Images/Paint Mixer-A/PaintMixer
 import PaintMixer_A2 from "../assets/Paint Mixer Images/Paint Mixer-A/PaintMixer-A3.jpg";
 import PaintMixer_A3 from "../assets/Paint Mixer Images/Paint Mixer-A/PaintMixer-A4.jpg";
 
+/* ================= ANGLE GRINDER – QAG850 ================= */
+import AngleGrinder_A_Main from "../assets/Angle Grinder/grinder.jpg";
+import AngleGrinder_Box from "../assets/Angle Grinder/grinder-box.jpg";
+
+/* ================= DRILL MACHINE – QDM650 ================= */
+import DrillMachine_A_Main from "../assets/Drill Machine/drill.jpg";
+import DrillMachine_Box from "../assets/Drill Machine/drill-box.jpg";
+
+/* ================= MARBLE CUTTER – QMC4SB ================= */
+import MarbleCutter_A_Main from "../assets/Marble Cutter/marble-one.jpg";
+import MarbleCutter_A1 from "../assets/Marble Cutter/marble-two.jpg";
+import MarbleCutter_A2 from "../assets/Marble Cutter/marble-three.jpg";
+import MarbleCutter_A3 from "../assets/Marble Cutter/marble-four.jpg";
+import MarbleCutter_Box from "../assets/Marble Cutter/marble-five.jpg";
+
 /* ================= PACKING IMAGES ================= */
 
 // Blower QB 40
@@ -69,7 +84,7 @@ import QPM800_Packing from "../assets/Packing Box And Carton/PaintMixer-QEM-800.
 import blowerAnnotated from "../../public/crow.jpeg";
 
 /* =====================================
-   MASTER PRODUCTS ARRAY (FINAL)
+  MASTER PRODUCTS ARRAY (FINAL)
 ===================================== */
 
 export const PRODUCTS = [
@@ -578,10 +593,317 @@ export const PRODUCTS = [
 
     features: [],
   },
+
+  /* ================= ANGLE GRINDER – QAG800 ================= */
+  {
+    id: 202,
+    category: "angle-grinder",
+    slug: "angle-grinder-qag800",
+
+    name: "ANGLE GRINDER QAG800",
+    brand: "QUALITEX",
+    price: 3299,
+
+    shortDescription:
+      "High-speed 800W angle grinder with 100mm disc capacity for cutting, grinding, and polishing applications",
+
+    longDescription:
+      "The QUALITEX QAG800 Angle Grinder is engineered for efficient cutting, grinding, and polishing applications across industrial, workshop, and maintenance environments. Powered by a robust 800W motor with 11000 RPM high-speed performance, this grinder delivers smooth material removal, precision grinding, and reliable cutting efficiency. Equipped with a 100mm disc capacity, spindle lock mechanism, and ergonomic body design, the QAG800 ensures comfortable handling, quick disc replacement, and stable operation during continuous use. Its compact lightweight structure and durable metal gear housing make it ideal for professional fabrication, polishing, and surface finishing tasks.",
+
+    images: {
+      main: AngleGrinder_A_Main,
+      gallery: [
+        AngleGrinder_A_Main,
+        AngleGrinder_Box,
+        // AngleGrinder_A1,
+        // AngleGrinder_A2,
+        // AngleGrinder_A3,
+      ],
+      annotated: null,
+    },
+
+    specifications: {
+      Voltage: "110V / 220V",
+      Frequency: "50/60 Hz",
+      Power: "800 W",
+      Speed: "11000 RPM",
+      Disc_Capacity: "100 mm (4 inch)",
+    },
+
+    performance: {
+      motor_Type: "Powerful 800W motor",
+      efficiency: "Efficient grinding performance",
+    },
+
+    speedControl: {
+      type: "Single speed",
+      regulator: false,
+    },
+
+    grindingSystem: {
+      disc_Capacity: "100mm",
+      spindle_Lock: true,
+    },
+
+    coolingAndSafety: {
+      cooling_Method: "Air ventilation cooling system",
+      continuous_Operation: true,
+    },
+
+    usageApplications: [
+      "Metal cutting",
+      "Grinding applications",
+      "Surface polishing",
+      "Fabrication work",
+      "Workshop maintenance",
+    ],
+
+    aboutThisItem: [
+      "Powerful 800W motor",
+      "100mm disc capacity",
+      "Easy spindle lock mechanism",
+      "Comfortable ergonomic design",
+    ],
+
+    packageContents: [
+      "1 × Angle Grinder",
+      "1 × Wheel Guard",
+      "1 × Side Handle",
+      "1 × Spanner",
+      "1 × User Manual",
+    ],
+
+    packingInformation: {
+      image: AngleGrinder_Box,
+
+      singlePieceBox: {
+        quantity: "1 Unit",
+      },
+
+      masterCarton: {
+        quantity: "10 Pcs",
+      },
+    },
+
+    features: [
+      "800W high-performance motor",
+      "11000 RPM operating speed",
+      "100mm (4 inch) disc capacity",
+      "Spindle lock for easy disc replacement",
+      "Ergonomic body design",
+      "Made in India",
+    ],
+  },
+
+  /* ================= DRILL MACHINE – QED10 ================= */
+  {
+    id: 203,
+    category: "drill-machine",
+    slug: "drill-machine-qed10",
+
+    name: "DRILL MACHINE QED10",
+    brand: "QUALITEX",
+    price: 2899,
+
+    shortDescription:
+      "Compact 500W electric drill machine with 10mm keyed chuck for wood, metal, and plastic drilling applications",
+
+    longDescription:
+      "The QUALITEX QED10 Drill Machine is engineered for reliable drilling performance in wood, metal, and plastic materials. Equipped with a powerful 500W motor and durable 10mm keyed chuck, this machine delivers stable operation, strong bit grip, and efficient drilling performance for workshop, fabrication, maintenance, and household applications. Its ergonomic body design ensures comfortable handling and better control during extended operation, while the compact lightweight structure improves usability for precision drilling tasks.",
+
+    images: {
+      main: DrillMachine_A_Main,
+      gallery: [
+        DrillMachine_A_Main,
+        DrillMachine_Box,
+        // DrillMachine_A1,
+        // DrillMachine_A2,
+        // DrillMachine_A3,
+      ],
+      annotated: null,
+    },
+
+    specifications: {
+      Voltage: "110V / 220V",
+      Frequency: "50/60 Hz",
+      Power: "500 W",
+      Speed: "2600 RPM",
+      Chuck_Size: "10 mm",
+      Chuck_Type: "Keyed Chuck",
+    },
+
+    performance: {
+      motor_Type: "Powerful copper motor",
+      efficiency: "Stable drilling performance",
+    },
+
+    speedControl: {
+      type: "Single speed",
+      regulator: false,
+    },
+
+    drillingSystem: {
+      chuck_Type: "10mm keyed chuck",
+      secure_Bit_Grip: true,
+    },
+
+    coolingAndSafety: {
+      cooling_Method: "Air ventilation cooling system",
+      continuous_Operation: true,
+    },
+
+    usageApplications: [
+      "Wood drilling",
+      "Metal drilling",
+      "Plastic drilling",
+      "Workshop applications",
+      "Household maintenance work",
+    ],
+
+    aboutThisItem: [
+      "Powerful 500W motor",
+      "10mm keyed chuck for secure grip",
+      "Ergonomic body design",
+      "Compact lightweight structure",
+    ],
+
+    packageContents: [
+      "1 × Drill Machine",
+      "1 × Side Handle",
+      "1 × Chuck Key",
+      "1 × User Manual",
+    ],
+
+    packingInformation: {
+      image: DrillMachine_Box,
+
+      singlePieceBox: {
+        quantity: "1 Unit",
+      },
+
+      masterCarton: {
+        quantity: "10 Pcs",
+      },
+    },
+
+    features: [
+      "500W high-performance motor",
+      "2600 RPM operating speed",
+      "10mm keyed chuck system",
+      "Comfortable ergonomic handling",
+      "Suitable for wood, metal, and plastic",
+      "Made in India",
+    ],
+  },
+
+  /* ================= MARBLE CUTTER – QMC4SB ================= */
+  {
+    id: 204,
+    category: "marble-cutter",
+    slug: "marble-cutter-qmc4sb",
+
+    name: "MARBLE CUTTER QMC4SB",
+    brand: "QUALITEX",
+    price: 5499,
+
+    shortDescription:
+      "Heavy-duty 1400W marble cutter with 110mm blade capacity for tile, granite, marble, and stone cutting applications",
+
+    longDescription:
+      "The QUALITEX QMC4SB Marble Cutter is engineered for powerful and precise cutting applications across marble, granite, tile, and stone surfaces. Equipped with a robust 1400W motor and high-speed 13000 RPM performance, this cutter delivers smooth operation and efficient heavy-duty cutting performance for professional construction and fabrication work. Its 110mm blade capacity and 30mm cutting depth ensure accurate cutting results, while the ergonomic handle design provides comfortable grip, improved control, and reduced operator fatigue during continuous operation. Built with a durable metal guard and stable base plate structure, the QMC4SB is ideal for industrial cutting environments requiring precision, durability, and reliability.",
+
+    images: {
+      main: MarbleCutter_A_Main,
+      gallery: [
+        MarbleCutter_A_Main,
+        MarbleCutter_A1,
+        MarbleCutter_A2,
+        MarbleCutter_A3,
+        MarbleCutter_Box,
+      ],
+      annotated: null,
+    },
+
+    specifications: {
+      Voltage: "110V / 220V",
+      Frequency: "50/60 Hz",
+      Power: "1400 W",
+      Speed: "13000 RPM",
+      Blade_Size: "110 mm",
+      Cutting_Depth: "30 mm",
+    },
+
+    performance: {
+      motor_Type: "Powerful 1400W motor",
+      efficiency: "Heavy-duty cutting performance",
+    },
+
+    speedControl: {
+      type: "Single speed",
+      regulator: false,
+    },
+
+    cuttingSystem: {
+      blade_Capacity: "110mm",
+      cutting_Depth: "30mm",
+    },
+
+    coolingAndSafety: {
+      cooling_Method: "Air ventilation cooling system",
+      continuous_Operation: true,
+    },
+
+    usageApplications: [
+      "Marble cutting",
+      "Tile cutting",
+      "Granite cutting",
+      "Stone cutting",
+      "Construction fabrication work",
+    ],
+
+    aboutThisItem: [
+      "Powerful 1400W motor",
+      "110mm blade cutting capacity",
+      "High-speed 13000 RPM performance",
+      "Comfortable ergonomic handle design",
+    ],
+
+    packageContents: [
+      "1 × Marble Cutter",
+      "1 × Cutting Blade",
+      "1 × Wrench",
+      "1 × User Manual",
+    ],
+
+    packingInformation: {
+      image: MarbleCutter_Box,
+
+      singlePieceBox: {
+        quantity: "1 Unit",
+      },
+
+      masterCarton: {
+        quantity: "4 Pcs",
+      },
+    },
+
+    features: [
+      "1400W heavy-duty motor",
+      "13000 RPM high-speed operation",
+      "110mm blade capacity",
+      "30mm cutting depth",
+      "Ergonomic comfortable grip",
+      "Suitable for marble, tile, granite, and stone",
+      "Made in India",
+    ],
+  },
 ];
 
 export const PRODUCTS_BY_CATEGORY = {
   blower: PRODUCTS.filter((p) => p.category === "blower"),
   "paint-mixer": PRODUCTS.filter((p) => p.category === "paint-mixer"),
   "heat-gun": PRODUCTS.filter((p) => p.category === "heat-gun"),
+  "angle-grinder": PRODUCTS.filter((p) => p.category === "angle-grinder"),
+  "drill-machine": PRODUCTS.filter((p) => p.category === "drill-machine"),
+  "marble-cutter": PRODUCTS.filter((p) => p.category === "marble-cutter"),
 };

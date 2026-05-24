@@ -16,7 +16,7 @@ import ProductDetailPage from "./Components/Product Details Page/ProductDetailPa
 import { QuickViewProvider } from "./Context/QuickViewContext.jsx";
 import TermsConditions from "./Components/Terms Conditions/TermsConditions.jsx";
 import PrivacyPolicy from "./Components/Terms Conditions/PrivacyPolicy.jsx";
-import ContactUs from "./Components/Contact Us/ContactUs.jsx";
+import ContactUs from "./Components/ContactUs/ContactUs.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

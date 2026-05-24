@@ -30,7 +30,7 @@
   font-size: 38px;
   font-weight: bolder;
   letter-spacing: 1px;
-  margin: 0px 0px 0px 16px;
+  /* margin: 0px 0px 0px 16px; */
   position: relative;
 
   /* Beautiful gradient text */
@@ -44,7 +44,7 @@
 
   /* Smooth animation */
   transition: all 0.3s ease;
-  /* border: 3px solid black; */
+  /* border: 2px solid black; */
 }
 
 /* Heading hover effect - shifts gradient */

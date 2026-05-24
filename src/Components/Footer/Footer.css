@@ -36,7 +36,7 @@
 /* top inner grid */
 .footer-inner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
   align-items: start;
   padding: 18px 0 28px;
@@ -74,7 +74,11 @@
   align-items: center;
   justify-content: flex-start;
   gap: 12px;
-  transition: transform 0.12s, background 0.12s, border-color 0.12s, color 0.16s;
+  transition:
+    transform 0.12s,
+    background 0.12s,
+    border-color 0.12s,
+    color 0.16s;
   /* border: 2px solid black; */
 }
 
@@ -137,7 +141,11 @@
   color: var(--muted);
   font-size: 15px;
   /* border: 2px solid rgb(255, 29, 29); */
-  transition: transform 0.12s, background 0.12s, border-color 0.12s, color 0.16s;
+  transition:
+    transform 0.12s,
+    background 0.12s,
+    border-color 0.12s,
+    color 0.16s;
 }
 
 .link-list li a,
@@ -186,7 +194,10 @@ li a:hover {
   border-radius: 10px;
   cursor: pointer;
   font-size: 15px;
-  transition: transform 0.12s, background 0.12s, border-color 0.12s;
+  transition:
+    transform 0.12s,
+    background 0.12s,
+    border-color 0.12s;
   /* border: 2px solid greenyellow; */
 }
 

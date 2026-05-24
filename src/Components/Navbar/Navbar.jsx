@@ -104,6 +104,15 @@ const Navbar = () => {
               <Link to="/product/paint-mixer" onClick={closeMenu}>
                 Qualitex Paint Mixer
               </Link>
+              <Link to="/product/angle-grinder" onClick={closeMenu}>
+                Qualitex Angle Grinder
+              </Link>
+              <Link to="/product/drill-machine" onClick={closeMenu}>
+                Qualitex Drill Machine
+              </Link>
+              <Link to="/product/marble-cutter" onClick={closeMenu}>
+                Qualitex Marble Cutter
+              </Link>
             </div>
           </li>
 
@@ -111,7 +120,7 @@ const Navbar = () => {
           <li className="mobile-contact">
             <NavLink to="/contact-us" onClick={closeMenu}>
               <button className="btn btn-14 btn-contact">
-                Contact us 
+                Contact us
                 <MdContactPhone size={20} />
               </button>
             </NavLink>
