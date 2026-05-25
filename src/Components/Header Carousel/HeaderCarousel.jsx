@@ -11,8 +11,12 @@ import Product_3 from "../../assets/Carousel Image/product-3.jpg";
 import Product_4 from "../../assets/Carousel Image/product-4.jpg";
 import Product_5 from "../../assets/Carousel Image/product-5.jpg";
 import Product_6 from "../../assets/Carousel Image/product-6.jpg";
+import Product_7 from "../../assets/Carousel Image/product-7.jpg";
+import Product_8 from "../../assets/Carousel Image/product-8.jpg";
+import Product_9 from "../../assets/Carousel Image/product-9.jpg";
 import { NavLink } from "react-router-dom";
 import { FaCloudDownloadAlt } from "react-icons/fa";
+import { MdContactPhone } from "react-icons/md";
 
 const slides = [
   {
@@ -50,6 +54,24 @@ const slides = [
     name: "ELECTRIC PAINT MIXER QPM800",
     des: "Heavy-duty electric mixer engineered for paint, cement, and construction material mixing with consistent performance.",
     img: Product_6,
+  },
+  {
+    title: "QUALITEX POWER TOOLS",
+    name: "ANGLE GRINDER QAG800",
+    des: "High-speed 800W angle grinder designed for cutting, grinding, polishing, and professional fabrication applications.",
+    img: Product_7,
+  },
+  {
+    title: "QUALITEX POWER TOOLS",
+    name: "MARBLE CUTTER QMC4SB",
+    des: "Heavy-duty marble cutter with 1400W motor and 110mm blade capacity for smooth and precise cutting performance.",
+    img: Product_8,
+  },
+  {
+    title: "QUALITEX POWER TOOLS",
+    name: "DRILL MACHINE QED10",
+    des: "Compact and powerful drill machine with 500W motor and 10mm keyed chuck for wood, metal, and plastic drilling.",
+    img: Product_9,
   },
 ];
 
@@ -89,7 +111,7 @@ export default function HeaderCarousel() {
                 <p className="hero-slide__desc">{item.des}</p>
 
                 <div className="hero-slide__buttons">
-                  <a
+                  {/* <a
                     href="/qualitex-catalogue.pdf"
                     download
                     className="btn btn-14 btn-catalog"
@@ -99,17 +121,23 @@ export default function HeaderCarousel() {
                       size={25}
                       className="btn-icon btn-icon--download"
                     />
-                  </a>
+                  </a> */}
+                  <NavLink to="/contact-us" className="btn btn-14 btn-catalog">
+                    Contact Us
+                    <MdContactPhone
+                      size={25}
+                      className="btn-icon btn-icon--download"
+                    />
+                  </NavLink>
 
-                  <NavLink to="/product">
-                    <a className="btn btn-14 btn-view-more">
-                      View More
-                      <FaArrowRightLong
-                        size={25}
-                        className="btn-icon btn-icon--arrow"
-                      />
-                    </a>
-                   
+                  <NavLink to="/product" className="btn btn-14 btn-view-more">
+                    {/* <a className="btn btn-14 btn-view-more"> */}
+                    View More
+                    <FaArrowRightLong
+                      size={25}
+                      className="btn-icon btn-icon--arrow"
+                    />
+                    {/* </a> */}
                   </NavLink>
                 </div>
               </div>

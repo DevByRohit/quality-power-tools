@@ -56,7 +56,6 @@ import DrillMachine_Box from "../assets/Drill Machine/drill-box.jpg";
 
 /* ================= MARBLE CUTTER – QMC4SB ================= */
 import MarbleCutter_A_Main from "../assets/Marble Cutter/marble-one.jpg";
-import MarbleCutter_A1 from "../assets/Marble Cutter/marble-two.jpg";
 import MarbleCutter_A2 from "../assets/Marble Cutter/marble-three.jpg";
 import MarbleCutter_A3 from "../assets/Marble Cutter/marble-four.jpg";
 import MarbleCutter_Box from "../assets/Marble Cutter/marble-five.jpg";
@@ -816,7 +815,6 @@ export const PRODUCTS = [
       main: MarbleCutter_A_Main,
       gallery: [
         MarbleCutter_A_Main,
-        MarbleCutter_A1,
         MarbleCutter_A2,
         MarbleCutter_A3,
         MarbleCutter_Box,
